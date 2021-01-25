@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-          cd /home/runner/work/osfar/osfar/osfar
-          npm run build
+      - name: npm CI
+        working-directory: /home/runner/work/osfar/osfar/osfar
+      - run: npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
