@@ -23,5 +23,6 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_OSFAR_4B6D1 }}'
           channelId: live
           projectId: osfar-4b6d1
+          entryPoint: /home/runner/work/osfar/osfar/osfar
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
