@@ -6,13 +6,14 @@ name: Deploy to Firebase Hosting on merge
   push:
     branches:
       - main
+defaults:
+  run:
+    working-directory: /home/runner/work/osfar/osfar/osfar
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: npm CI
-        working-directory: /home/runner/work/osfar/osfar/osfar
       - run: npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
